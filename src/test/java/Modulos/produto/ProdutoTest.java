@@ -30,7 +30,7 @@ public class ProdutoTest {
         baseURI = "http://165.227.93.41";
         ;
         // port = 8080;;
-        basePath = "/lojinha";
+        basePath = "/lojinha-bugada";
 
 
 
