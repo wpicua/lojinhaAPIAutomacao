@@ -3,19 +3,10 @@ package Modulos.produto;
 import dataFactory.ProdutoDataFactory;
 import dataFactory.UsuarioDataFactory;
 import io.restassured.http.ContentType;
-import io.restassured.response.ValidatableResponse;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import pojo.ComponentePojo;
-import pojo.ProdutoPojo;
-import pojo.UsuarioPojo;
-
-import java.util.ArrayList;
-import java.util.List;
-
 import static io.restassured.RestAssured.*;
-import static io.restassured.matcher.RestAssuredMatchers.*;
 import static org.hamcrest.Matchers.*;
 
 @DisplayName("Testes de API Rest do modulo de Produto")
@@ -28,11 +19,7 @@ public class ProdutoTest {
         // Configurando os dados da API Rest da Lojinha
 
         baseURI = "http://165.227.93.41";
-        ;
-        // port = 8080;;
-        basePath = "/lojinha-bugada";
-
-
+        basePath = "/lojinha";
 
         // Obter Token do usuario
 
@@ -45,8 +32,6 @@ public class ProdutoTest {
                 .extract()
                     .path("data.token");
     }
-
-
     @Test
     @DisplayName("Validar que o valor do produto igual a 0.00 nao e permitido")
     public void testValidarLimitesZeradoProibidoValorProduto() {
